@@ -1,0 +1,52 @@
+.footer {
+    &_top {
+        background-color: $search;
+        padding: 1% 0;
+        
+        a {
+            font-size: 13px;
+            margin-left: 15px;
+        }
+
+        a:hover {
+            transition: all .3s linear;
+            color: #ffffff;
+        }  
+    }
+    &_bottom {
+        cursor: auto;
+        margin-top: 1px;
+        display: flex;
+        background-color: $search;
+        padding: 1% 15px;
+        
+        p {
+            font-size: 13px;
+            margin-left: 15px; 
+        }
+    }
+}
+
+
+@media screen and (max-width:599px) {
+    .footer {
+        a {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+        .footer_top {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .footer_bottom {
+            display: none;
+        }
+    }
+}
+
+    

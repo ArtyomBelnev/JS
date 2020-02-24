@@ -1,0 +1,28 @@
+.header-bottom {
+    background-color: $fon2-header;
+    ul {
+        display: flex;
+
+        li {
+            border: none;
+        }
+    }
+    a {
+        padding: 7px 0;
+        margin-right: 15px;
+        color: #ffffff;
+        font-size: 15px;
+    }
+    a:hover {
+        border-top: 2px solid;
+        transition: all .3s linear;
+        color:red;
+    }
+}
+
+
+@media screen and (max-width:599px) {
+    .header-bottom {
+        display: none;
+    }
+}
