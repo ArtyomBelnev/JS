@@ -3,6 +3,12 @@
     min-height: 100%;
     display: flex;
     flex-direction: column;
+
+    &-li {
+        font-size: 18px;
+        margin-top: 10%;
+        margin-bottom: 5px;
+    }
 }
 
 ul li {
@@ -15,19 +21,23 @@ ul li {
 }
 
 a {
-    color: $header_text;
-}
-
-h2 {
-    padding-left: 20px;
-    margin-top: 10%;
-    margin-bottom: 5px;
+    color: $header2_text;
 }
 
 li:hover {
-    border-left: 3px solid;
+    border-left: 3px solid $header2_text;
     transition: all .3s linear;
 
+    a {
+        color: #000;
+        transition: all .3s linear;
+    }
+
+}
+
+.aside-li:hover {
+    border-left: 3px solid transparent;
+    transition: all .3s linear;
 }
 
 @media screen and (max-width:599px) {

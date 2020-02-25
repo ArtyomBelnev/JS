@@ -1,9 +1,9 @@
 .main {
-    background-color: #ccc;
+    background-color: $background-color;
     
     .content {
         display: flex;
         background-color: #fff;
-        box-shadow: 0 2px 5px rgb(134, 96, 96); 
+        border: 1px solid #e0e4ed;
     }
 }
