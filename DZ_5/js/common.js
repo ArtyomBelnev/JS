@@ -1,14 +1,16 @@
-function Cat() {
-    var foodAmount = 50;
-    
-    function formatFoodAmount() {
-        return foodAmount + ' гр';
-    }
+(function() {
 
-    this.feed = function() {
-        console.log('Насыпаем в миску ' + formatFoodAmount() + ' корма');
-    };
-}
+	var hamburger = {
+		navToggle: document.querySelector('.nav-toggle'),
+		nav: document.querySelector('nav'),
 
-var cat = new Cat();
-cat.feed();
+		doToggle: function(e) {
+			e.preventDefault();
+			this.navToggle.classList.toggle('expanded');
+			this.nav.classList.toggle('expanded');
+		}
+	};
+
+	hamburger.navToggle.addEventListener('click', function(e) { hamburger.doToggle(e); });
+
+}());
