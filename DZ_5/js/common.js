@@ -1,5 +1,4 @@
 (function() {
-\\\\123
 
 	var hamburger = {
 		navToggle: document.querySelector('.nav-toggle'),
