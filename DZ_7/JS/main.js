@@ -1,6 +1,11 @@
 function Animal(name) {
     var foodAmount = 50;
 
+    this.name = name;
+
+    var self = this;
+
+
     function formatFoodAmount() {
         return foodAmount + ' гр.';
     }
@@ -15,28 +20,25 @@ function Animal(name) {
         foodAmount = amount;
     };
 
-    this.name = name;
-
     this.feed = function() {
-        console.log('Насыпаем в миску ' + this.dailyNorm() + ' корма.');
+        console.log('Насыпаем в миску ' + self.dailyNorm() + ' корма.');
     };
 }
 
 function Cat(name) {
-    var self = this;
 
     Animal.apply(this,arguments);
 
-    var animalFeed = self.feed;
-    self.feed = function() {
-        animalFeed.call(self);
+    var animalFeed = this.feed;
+    this.feed = function() {
+        animalFeed();
         console.log('Кот доволен ^_^');
-        return self;
+        return this;
     };
 
-    self.stroke = function() {
+    this.stroke = function() {
         console.log('Гладим кота.');
-        return self;
+        return this;
     };
 }
 
