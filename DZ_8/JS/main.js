@@ -45,7 +45,50 @@
 // cat.feed();
 
 // //task 2
-// s
+// function cloneObj(obj) {
+//     var objNew = {};
+
+//     if (Array.isArray(obj)) {
+//         objNew = [];
+//     }
+
+//     for (var key in obj) {
+//         if (Array.isArray(obj[key]) || (obj[key] instanceof Object)) {
+//             objNew[key] = cloneObj(obj[key]);
+//         } else {
+//             objNew[key] = obj[key];
+//         }
+//     }
+
+//     return objNew;
+// }
+
+// var initialObj = {
+//     string: 'Vasya',
+//     number: 30,
+//     boolean: true,
+//     undefined: undefined,
+//     null: null,
+//     array: [1, 2, 3],
+//     object: {
+//         string2: 'Petrov',
+//         object2: {
+//             array2: [{}, {}]
+//         },
+//         object3: {}
+//     },
+//     method: function () {
+//         alert('Hello');
+//     }
+// };
+
+// var clonedObj = cloneObj(initialObj);
+
+// clonedObj.object.object3[0] = 'CoronaVirus';
+// clonedObj.array.push(2020);
+
+// console.log(initialObj);
+// console.log(clonedObj);
 
 
 
@@ -114,6 +157,8 @@
 //         alert('Hello');
 //     }
 // };
+
+
 
 
 // console.log(deep(initialObj, cloneObj));
