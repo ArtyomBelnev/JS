@@ -1,17 +1,23 @@
 // task 1
 
-// function Name(arr) {
-//     var a = [];
+function name(arr) {
+    // var a = [];
 
-//     arr.forEach(function (name, i, arr) {
-//         var b = {};
-//         a.push(b);
-//         b.name = arr[i];
-//     });
-//     return a;
-// }
+    // arr.map(function (name, i,) {
+    //     var b = {};
+    //     a.push(b);
+    //     b.name = arr[i];
+    // });
 
-// console.log(Name(['Вася', 'Петя', '']));
+    return arr.map(function(el) {
+        var b = {};
+        b.name = el;
+        return b;
+      });
+    // return a;
+}
+
+console.log(name(['Вася', 'Петя', '']));
 
 // task 2
 
