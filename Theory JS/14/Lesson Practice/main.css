@@ -1,0 +1,10 @@
+.changed {
+    background: #000;
+    color: red;
+    transition: all .3s linear;
+    font-size: 40px;
+}
+
+a:first-child {
+    transition: all .3s linear;
+}
