@@ -1,6 +1,8 @@
 
-function addRow(id) {
-    var newStrong = document.getElementById(id).getElementsByTagName('TBODY')[0];
+var table = document.getElementById('table');
+var button = document.getElementById('button');
+
+button.addEventListener('click', function addRow() {
     var row = document.createElement("TR"),
         td1 = document.createElement("TD"),
         td2 = document.createElement("TD"),
@@ -10,40 +12,59 @@ function addRow(id) {
     row.appendChild(td2);
     row.appendChild(td3);
 
-    td1.innerHTML = '<input type="text">';
-    td2.innerHTML = '<input type="text">';
-    td3.innerHTML = '<input type="text">';
-    newStrong.appendChild(row);
-}
-
-document.getElementsByTagName("INPUT").style.display = "block";
-
-// function onInput() {
-//     var input = document.getElementById(id):
-
-// }
-// var container = document.getElementById('container');
-// container.style.color = 'red';
-
-// var firstPar = document.createElement('p'),
-//     secondPar = document.createElement('p');
-
-// firstPar.innerHTML = 'Hello, here are <a href="http://google.by">Link 1</a> and <a href="http://google.by">Link 2</a>';
-// secondPar.innerHTML = 'Hello, here are <a href="http://google.by">Link 5</a> and <a href="http://google.by">Link 4</a>';
+    table.prepend(row);
+});
 
 
-// container.appendChild(firstPar);
+table.addEventListener('click', function addInput() {
+    var td = event.target;
 
+    if (td.id === 'button') {
+        return
+    }
 
-// // container.setAttribute(about, Hello);
+    var input = document.createElement('input');
+    input.value = td.innerHTML;
+    td.innerHTML = '';
+    td.appendChild(input);
+    input.focus();
+
+    input.addEventListener('blur', function () {
+        td.innerHTML = this.value;
+    });
+});
 
 
 
-// // container.setAttribute('data-about', '123');
-// // alert(container.getAttribute('data-about'));
 
-// document.body.className = 'class1 class2';
-// container.classList.toggle('ex1');
+
+
+
+
+
+
+
+
+
+
+// tible.addEventListener('click', function addInput() {
+//     var td = event.target;
+//     var text = td.innerHTML;
+//     var input = document.createElement('input');
+//     td.appendChild(input);
+//     text = input.value;
+//     input.focus();
+
+//     var self = this;
+//     input.addEventListener('blur', function () {
+//         td.innerHTML = this.value;
+//         tible.addEventListener('click', addInput);
+//     });
+
+// });
+
+
+
 
 
 
