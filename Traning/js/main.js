@@ -30,7 +30,13 @@ table.addEventListener('click', function addInput() {
     input.focus();
 
     input.addEventListener('blur', function () {
-        td.innerHTML = this.value;
+        td.innerHTML = input.value;
+    });
+
+    input.addEventListener('keyup', function () {
+        if (event.keyCode === 13) {
+            td.innerHTML = input.value;
+        }
     });
 });
 
