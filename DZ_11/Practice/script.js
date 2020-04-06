@@ -16,14 +16,14 @@ container.appendChild(firstPar);
 container.appendChild(secondPar);
 
 
-var button = document.getElementsByTagName('BUTTON')[0];
+var button = document.body.firstElementChild;
 
 var link1 = firstPar.querySelectorAll('a');
 var link2 = secondPar.querySelectorAll('a');
 
 button.onclick = function () {
     for (var i = 0; i < link1.length; i++) {
-        link1[i].classList.toggle('changed');
+        link1[i].classList.toggle('сheckLink');
     }
 };
 

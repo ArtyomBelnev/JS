@@ -42,15 +42,17 @@ table.addEventListener('click', function addInput() {
     td.appendChild(input);
     input.focus();
 
+   
+    input.addEventListener('keyup', function () {
+        if (event.keyCode === 13) {
+            input.blur();
+        }
+    });
+
     input.addEventListener('blur', function () {
         td.innerHTML = input.value;
     });
 
-    input.addEventListener('keyup', function () {
-        if (event.keyCode === 13) {
-            td.innerHTML = input.value;
-        }
-    });
 });
 
 
