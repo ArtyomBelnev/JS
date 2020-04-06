@@ -2,50 +2,54 @@ var button = document.getElementById('button');
 var x = document.getElementById('inX');
 var y = document.getElementById('inY');
 var inputs = document.querySelectorAll('input');
-var table = document.getElementById('table');
-button.setAttribute('disabled', 'disabled');
 
+var newDIV = document.createElement('DIV');
+newDIV.id = 'table';
+document.body.appendChild(newDIV);
+
+var table = document.getElementById('table');
+
+button.setAttribute('disabled', 'disabled');
 
 inputs.forEach(function (item, i) {
     inputs[i].addEventListener('keyup', function () {
         if (event.keyCode !== 32) {
             button.removeAttribute('disabled');
-            
-            if((x.value.trim() === '') || (y.value.trim() === '')) {
-                 button.setAttribute('disabled', 'disabled');
+
+            if ((x.value.trim() === '') || (y.value.trim() === '')) {
+                button.setAttribute('disabled', 'disabled');
             }
-        } 
+        }
     });
 });
 
-button.addEventListener('click', function() {
-    var vl = Number(x.value.trim());
-    var vl2 = Number(y.value.trim());
+button.addEventListener('click', function () {
 
-    table.innerHTML = '';
+    var vlX = Number(x.value.trim());
+    var vlY = Number(y.value.trim());
 
-     if (((vl >= 1) && (vl < 10)) && (Number.isInteger(vl))) {
-        var rows = x.value;
-     } else {
+    if (((vlX >= 1) && (vlX < 10)) && (Number.isInteger(vlX))) {
+        var rows = vlX;
+    } else {
         alert('Введите корректное целое число для X от 1 до 10.');
         x.value = '';
-        y.value = '';
-     }
+    }
 
-     if (((vl2 >= 1) && (vl2 < 10)) && (Number.isInteger(vl2))) {
-        var columns = y.value;
+    if (((vlY >= 1) && (vlY < 10)) && (Number.isInteger(vlY))) {
+        var columns = vlY;
     } else {
         alert('Введите корректное целое число для Y от 1 до 10.');
-        x.value = '';
         y.value = '';
     }
 
+    table.innerHTML = '';
+
     for (var i = 0; i < columns; i++) {
-        var newTDY = document.createElement('tr');
+        var newTDY = document.createElement('TR');
         table.appendChild(newTDY);
 
         for (var j = 0; j < rows; j++) {
-            var newTDX = document.createElement('td');
+            var newTDX = document.createElement('TD');
             newTDY.appendChild(newTDX);
 
             if (i % 2 !== j % 2) {
@@ -56,16 +60,8 @@ button.addEventListener('click', function() {
         }
     }
 
-    
-
-    table.onclick = function (event) {
-        var target = event.target;
+    table.onclick = function () {
         var allTD = table.querySelectorAll('td');
-        // if (target.tagName != 'TD') return;
-        // if (!target.classList.contains('black')) return;
-        // allTD.forEach(function (el) {
-        //     el.classList.toggle('black');
-        // });
 
         for (var k = 0; k < allTD.length; k++) {
             allTD[k].classList.toggle('black');

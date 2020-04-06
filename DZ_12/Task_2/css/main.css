@@ -31,15 +31,6 @@ td {
     
 }
 
-
-table {
-    margin: 0 auto;
-    width: 600px;
-    border-collapse: collapse; 
-    border: 2px solid #000; 
-}
-
-
 #table {
     margin-left: 100px;
     margin-top: 50px;
