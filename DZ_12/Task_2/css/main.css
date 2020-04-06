@@ -1,13 +1,22 @@
-.in {
+* {
+    box-sizing: border-box;
+    padding: 1px;
+}
+
+.Form {
     display: flex;
-    align-items: center;
-    margin-left: 10px;
+    flex-direction: column;
+}
+.in {
+    margin-bottom: 15px;
 }
 
 input {
     margin-left: 5px;
     width: 150px;
     height: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 button {
@@ -17,8 +26,8 @@ button {
     font-weight: 700;
 }
 
-p {
-    font-weight: 700;
+label {
+	font: inherit;
 }
 
 td {

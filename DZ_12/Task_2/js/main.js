@@ -36,18 +36,20 @@ button.addEventListener('click', function () {
     var vlX = Number(x.value.trim());
     var vlY = Number(y.value.trim());
 
-    if (((vlX >= 1) && (vlX < 10)) && (Number.isInteger(vlX))) {
+    if (((vlX >= 1) && (vlX < 11)) && (Number.isInteger(vlX))) {
         var rows = vlX;
     } else {
         alert('Введите корректное целое число для X от 1 до 10.');
-        x.value = '';
+         x.value = '';
+         button.setAttribute('disabled', 'disabled');
     }
 
-    if (((vlY >= 1) && (vlY < 10)) && (Number.isInteger(vlY))) {
+    if (((vlY >= 1) && (vlY < 11)) && (Number.isInteger(vlY))) {
         var columns = vlY;
     } else {
         alert('Введите корректное целое число для Y от 1 до 10.');
         y.value = '';
+        button.setAttribute('disabled', 'disabled');
     }
 
     table.innerHTML = '';

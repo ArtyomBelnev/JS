@@ -16,35 +16,33 @@ secondPar.innerHTML = 'Hello, here are <a href="http://google3.by">Link 3</a> an
 container.appendChild(firstPar);
 container.appendChild(secondPar);
 
-var button = document.getElementsByTagName('BUTTON')[0];
+var button = document.body.firstElementChild;
 
 var link1 = firstPar.querySelectorAll('a');
-var link2 = secondPar.querySelectorAll('a');
 
 button.onclick = function () {
     for (var i = 0; i < link1.length; i++) {
-        link1[i].classList.toggle('changed');
+        link1[i].classList.toggle('checkLink');
     }
 };
 
 localStorage.clear();
 
-link2.forEach(function (item, j) {
-    link2[j].addEventListener('click', function () {
-        event.preventDefault();
+secondPar.addEventListener('click', function () {
+    var target = event.target;
+    
+    event.preventDefault();
 
-        if (localStorage.getItem(link2[j].innerHTML)) {
-            alert((JSON.parse(localStorage.getItem(link2[j].innerHTML))).path);
-
-        } else if (localStorage.getItem(link2[j].innerHTML) === null) {
-            var obj = {};
-            obj.path = (link2[j].getAttribute('href'));
-
-            localStorage.setItem(link2[j].innerHTML, JSON.stringify(obj));
-
-            alert('Cсылка была сохранена!');
-        };
-    });
+    if (target.tagName !== 'A') {
+        return;
+    } else if (localStorage.getItem(target.textContent) === null) {
+        var obj = {};
+        obj.path = target.getAttribute('href');
+        localStorage.setItem(target.textContent, JSON.stringify(obj));
+        alert('Cсылка была сохранена!');
+    } else  {
+        alert(JSON.parse(localStorage.getItem(target.textContent)).path);
+    }
 });
 
 
