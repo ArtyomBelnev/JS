@@ -1,0 +1,112 @@
+main {
+    background: url(/images/bg.jpg) no-repeat;
+}
+.section  {
+    margin-top: 1%;
+
+    &-top {
+        display: flex;
+        justify-content: center;
+
+        h1 {
+            color: $all-black;
+        }
+    }
+
+    &_middle {
+        display: flex;
+        width: 100%;
+        padding: 1% 0;
+
+        &-left {
+            border: 1px solid;
+            img {
+                border-radius: 10%;
+                border: 2px solid #000000;
+            }
+        }
+
+        &-right {
+            padding: 0 2%;
+            width: 100%;
+
+
+            .smr-top {
+                p {
+                    display: flex;
+                    align-items: center;
+                    color: $all-black;
+                    font-weight: 500;
+                    margin-bottom: 10px;
+                    
+                    img {
+                        margin-right: 5px;
+                        width: 20px;
+                    }
+                }
+                
+            }
+
+            .smr-center {
+                background-color: #fff;
+                text-align: center;
+                span {
+                    color: $all-black;
+                    font-weight: 900;
+                }
+
+                .smr-info {
+                    display: flex;
+
+                    .smr-info_left {
+                        display: flex;
+                        width: 100%;
+
+                        span {
+                            display: flex;
+                            white-space: nowrap;
+                            color: $all-black;
+                            font-weight: 900;
+                        }
+
+                        .smr-info_line {
+                            display: flex;
+                            width: 100%;
+                            border-bottom: 2px dotted $all-black;
+                            margin-bottom: 5px;
+                            margin-left: 5px;
+                            margin-right: 5px;
+                        }
+                    }
+                
+                    .smr-info_right {
+                        color: $all-blue;
+                        display: flex;
+                        white-space: nowrap;
+                        font-weight: 900;
+                    }
+                }
+
+            }
+        }
+    }
+
+    &_bottom {
+        width: 30%;
+        border-bottom: 2px solid #f80707;
+        
+        color: $all-black;
+
+        &-buttons {
+            display: flex;
+            
+            div {
+                padding: 2% 0;
+                font-family: 'Fira500', sans-serif;
+                font-weight: 500;
+                margin-left: 20px;
+            }
+        }
+
+    }
+}

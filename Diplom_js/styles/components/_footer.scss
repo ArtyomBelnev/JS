@@ -1,0 +1,15 @@
+.footer {
+    background-color: $footer-bc;
+    padding: 5px 1%;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        span {
+            color: rgb(6, 6, 246);
+        }
+    }
+}

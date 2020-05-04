@@ -1,0 +1,28 @@
+
+
+.header {
+
+    &_center {
+        background-color: $header-bc;
+        display: flex;
+        justify-content: center;
+        padding: 1% 0;
+        
+        a {
+            font-size: 2rem;
+            color: $header-text;
+            transition: all .3s linear;  
+            
+            &:nth-child(2) {
+                margin-left: 1%;
+                margin-right: 1%;
+            }
+        }
+
+        a:hover {
+            color: #ff0054;
+            transition: all .3s linear;
+
+        } 
+    }
+}
