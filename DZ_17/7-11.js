@@ -15,41 +15,41 @@
 // }
 // Для свойства "Пользователь с именем Федор" осуществлять поиск объекта по имени, которое начинается с подстроки Fedor.
 
-// {
-//     const info = [
-//         {name: 'Vasya Pupkin', age: 25},
-//         {name: 'Ivan Petrov', age: 30},
-//         {name: 'Fedor Ivanov', age: 42}
-//         ];
-    
-//     function f7 (arr) {
-//         const testAge = arr.filter(item => item.age < 40);
-//         const getUser = arr.find(item => item.name.startsWith('Fedor'));
+{
+    const info = [
+        { name: 'Vasya Pupkin', age: 25 },
+        { name: 'Ivan Petrov', age: 30 },
+        { name: 'Fedor Ivanov', age: 42 }
+    ];
 
-//         return {'Пользователи младше 40':testAge,'Пользователь с именем Федор':getUser}
-//     }
+    function f7(arr) {
+        const testAge = arr.filter(item => item.age < 40);
+        const getUser = arr.find(item => item.name.startsWith('Fedor'));
 
-//     console.log(f7(info));
-// }
+        return { 'Пользователи младше 40': testAge, 'Пользователь с именем Федор': getUser }
+    }
+
+    console.log(f7(info));
+}
 
 // task 8
 // Написать функцию, принимающую массив имен пользователей и возвращающую массив объектов вида:
 // [
-// {Пользователь 1: 'Вася'},
-// {Пользователь 2: 'Петя'}
+//     { Пользователь 1: 'Вася' },
+//     { Пользователь 2: 'Петя' }
 // ]
 
-// {
-//     let names = ['Вася','Петя','Толя','Леня','Миша'];
+{
+    const names = ['Вася', 'Петя', 'Толя', 'Леня', 'Миша'];
 
-//     function f8(arr) {
+    function f8(arr) {
 
-//         return arr.map((v,i) =>({[`Пользователь ${i+1}`]: v}));
+        return arr.map((v, i) => ({ [`Пользователь ${i + 1}`]: v }));
 
-//     }
-    
-//     console.log(f8(names));
-// }
+    }
+
+    console.log(f8(names));
+}
 
 // 'Пользователь ' + (i+1)
 
@@ -68,75 +68,74 @@
 // }
 // Spread-оператор не использовать. Использовать перебирающий метод массивов. Старые объекты не должны преобразовываться.
 
-// {
-//     const userList = [
-//         {name: 'Vasya'},
-//         {name: 'Piotr', age: 25},
-//         {salary: '2000$'}
-//         ];
+{
+    const userList = [
+        { name: 'Vasya' },
+        { name: 'Piotr', age: 25 },
+        { salary: '2000$' }
+    ];
 
-//      function f9(arr) {
+    function f9(arr) {
 
-//         const newList = {}
+        const newList = {}
 
-//         return arr.reduce((acc, item) => (Object.assign(newList,item)));
-//     }
-   
-//     console.log(f9(userList));
-//     console.log(userList);
-// }
+        return arr.reduce((acc, item) => (Object.assign(newList, item)));
+    }
+
+    console.log(f9(userList));
+    console.log(userList);
+}
 
 // task 10
 // Переписать последнее задание с ООП на новый синтаксис. Проверить работоспособность всех методов.
 
-// {
+{
 
-// class Animal {
-//     constructor (name) {
-//         this.name = name;
-//         this._foodAmount = 50;
-//     }
+    class Animal {
+        constructor(name) {
+            this.name = name;
+            this._foodAmount = 50;
+        }
 
-//     _formatFoodAmount(){
-//         return `${this._foodAmount} гр.`
-//     };
+        _formatFoodAmount() {
+            return `${this._foodAmount} гр.`
+        };
 
-//     dailyNorm(amount){
+        dailyNorm(amount) {
 
-//         if (!arguments.length) return this._formatFoodAmount();
+            if (!arguments.length) return this._formatFoodAmount();
 
-//         if(amount < 50 || amount > 500) {
-//             return 'Недопустимое количество корма.';
-//         }
+            if (amount < 50 || amount > 500) {
+                return 'Недопустимое количество корма.';
+            }
 
-//         this._foodAmount = amount;
-//     };
+            this._foodAmount = amount;
+        };
 
-//     feed() {
-//         console.log(`Насыпаем в миску ${this.dailyNorm()} корма.`)
-//     };
-// };
+        feed() {
+            console.log(`Насыпаем в миску ${this.dailyNorm()} корма.`)
+        };
+    };
 
-// class Cat extends Animal {
-//     constructor(name) {
-//         super(name);
-//     }
-//     feed() {
-//        super.feed();
-//        console.log('Кот доволен ^_^');
-//        return this;
-//     };
-//     stroke() {
-//         console.log('Гладим кота.');
-//         return this;
-//     };
-// };
+    class Cat extends Animal {
+        constructor(name) {
+            super(name);
+        }
+        feed() {
+            super.feed();
+            console.log('Кот доволен ^_^');
+            return this;
+        };
+        stroke() {
+            console.log('Гладим кота.');
+            return this;
+        };
+    };
 
-// let barsik = new Cat('Барсик');
-// console.log(barsik.feed().stroke().stroke().feed());
-// barsik = null;
-
-// }
+    let barsik = new Cat('Барсик');
+    console.log(barsik.feed().stroke().stroke().feed());
+    barsik = null;
+}
 
 // task 11
 // Написать функцию-промис, которая принимает в себя 2 целых числа и выводит в консоль числа, входящие в диапазон,
@@ -144,34 +143,30 @@
 // Если в функцию первым параметром было передано бОльшее число - значения параметров следует поменять местами.
 // В случае, если в функцию были переданы не целые числа - промис должен быть завершен неуспешно.
 
-// {
-//     function createFirstPromise(vl1,vl2) {
-//         let x = vl1;
-//         let y = vl2;
+{
+    function createFirstPromise(x, y) {
 
-//         return new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) => {
 
-//         if (x > y) [y,x]=[x,y];
-    
-//             let timer = setInterval(function() {
-//                 if(!Number.isInteger(x,y)) {
-//                     reject('Промис завершен неуспешно');
-//                     clearInterval(timer);
-//                     return;
-//                 }
+            if (x > y) [y, x] = [x, y];
 
-//                 if(x <= y) {
-//                     console.log(x++);
-//                 } else {
-//                     resolve(x-1);
-//                     clearInterval(timer);
-//                 }
-//             },1000);
-//         });
-//     }
-    
-//     createFirstPromise(2,10)
-       
-//         .then(x => console.log(`Последнее запомненное число: ${x}`))
-//         .catch(error => console.log(error))
-// }
+            let timer = setInterval(function () {
+                if (!Number.isInteger(x, y)) {
+                    reject('Промис завершен неуспешно');
+                    clearInterval(timer);
+                    return;
+                } else if (x <= y) {
+                    console.log(x++);
+                } else {
+                    resolve(x - 1);
+                    clearInterval(timer);
+                }
+            }, 1000);
+        });
+    }
+
+    createFirstPromise(12, 2)
+
+        .then(x => console.log(`Последнее запомненное число: ${x}`))
+        .catch(error => console.log(error))
+}
